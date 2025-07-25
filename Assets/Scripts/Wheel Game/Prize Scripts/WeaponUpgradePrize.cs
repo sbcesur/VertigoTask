@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponUpgradePrize : MonoBehaviour
+namespace shooterGame.wheelGame
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(menuName = "shooter game/wheel game/prizes/weapon upgrade")]
+    public class WeaponUpgradePrize : Prize
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

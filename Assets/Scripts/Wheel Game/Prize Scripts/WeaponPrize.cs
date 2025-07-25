@@ -8,11 +8,11 @@ namespace shooterGame.wheelGame
     [CreateAssetMenu(menuName = "shooter game/wheel game/prizes/weapon")]
     public class WeaponPrize : Prize
     {
-        public Weapon prize;
+        public Weapon prizeWeapon;
 
         public void AddPrizeToInventory()
         {
-            prize.AddToInventory();
+            prizeWeapon.AddToInventory();
         }
     }
 }

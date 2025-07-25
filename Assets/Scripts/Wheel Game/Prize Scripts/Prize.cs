@@ -8,7 +8,7 @@ namespace shooterGame.wheelGame
     {
         [SerializeField] string prizeName;
         [SerializeField] protected prizeRarities prizeRarity;
-        [SerializeField] private Texture icon;
+        [SerializeField] private Texture2D icon;
 
 
         public void AddPrize()
