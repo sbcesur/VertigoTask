@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: WeaponUpgrade_Knife Points
   m_EditorClassIdentifier: 
   prizeName: knifePoints
-  prizeRarity: 0
-  icon: {fileID: 2800000, guid: 0a35c261cc1d2b84b9ff0989d7a276c1, type: 3}
+  _prizeRarity: 0
+  _icon: {fileID: 21300000, guid: 0a35c261cc1d2b84b9ff0989d7a276c1, type: 3}
+  _endsGame: 0

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: WeaponUpgrade_Shotgun Points
   m_EditorClassIdentifier: 
   prizeName: shotgunPoints
-  prizeRarity: 0
-  icon: {fileID: 2800000, guid: ff5f4121d49d3264cb504a1f1cd2c345, type: 3}
+  _prizeRarity: 0
+  _icon: {fileID: 21300000, guid: ff5f4121d49d3264cb504a1f1cd2c345, type: 3}
+  _endsGame: 0

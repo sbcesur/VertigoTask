@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Money
   m_EditorClassIdentifier: 
   prizeName: money
-  prizeRarity: 0
-  icon: {fileID: 2800000, guid: 366c46c314d73d44f83ee84b23a1f37f, type: 3}
+  _prizeRarity: 0
+  _icon: {fileID: 21300000, guid: 366c46c314d73d44f83ee84b23a1f37f, type: 3}
+  _endsGame: 0

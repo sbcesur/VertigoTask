@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: WeaponUpgrade_Pistol Points
   m_EditorClassIdentifier: 
   prizeName: pistolPoints
-  prizeRarity: 0
-  icon: {fileID: 2800000, guid: 12d73c45db3f67949bee2f2e9a03f5eb, type: 3}
+  _prizeRarity: 0
+  _icon: {fileID: 21300000, guid: 12d73c45db3f67949bee2f2e9a03f5eb, type: 3}
+  _endsGame: 0

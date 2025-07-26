@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178825e483f03f5409d4e33da7164a5d, type: 3}
+  m_Name: WheelGameData
+  m_EditorClassIdentifier: 
+  _allPrizes:
+  - {fileID: 11400000, guid: 028de857c19e3fc499231d97b96f097d, type: 2}
+  - {fileID: 11400000, guid: d8f776e15e796354fa294d4beb12de02, type: 2}
+  - {fileID: 11400000, guid: fb5fd9a10bb10304f8bdd4a8dd8c60fb, type: 2}
+  - {fileID: 11400000, guid: 594c441f78e79c84689c2305400999ca, type: 2}
+  - {fileID: 11400000, guid: 79a278ca086b5e34bbd75c77d3f7fa52, type: 2}
+  - {fileID: 11400000, guid: 200029fc2e93f694daefe7b464858312, type: 2}
+  - {fileID: 11400000, guid: 73b5110cdb572db4b92e6b6b3cfe373e, type: 2}
+  - {fileID: 11400000, guid: 936f5ccc4ec52fd4b845da4f60a4834a, type: 2}
+  - {fileID: 11400000, guid: 089d44542e1a5ef44adfc2e820c9ec6a, type: 2}
+  - {fileID: 11400000, guid: 96e13ea82aaf5cf4889396554ba7ed3d, type: 2}
+  - {fileID: 11400000, guid: 2aa4ddb36ec72e749a7e48f7ffc44613, type: 2}
+  - {fileID: 11400000, guid: d0de08bbbe6d48c4b8793e30048c20be, type: 2}
+  - {fileID: 11400000, guid: 0a369016ecb400346bf6a728ecd1663f, type: 2}
+  - {fileID: 11400000, guid: 47e70148e1cc5904dad338624340c718, type: 2}
+  - {fileID: 11400000, guid: 508ef3c7266ca664fa6320ff871f5e30, type: 2}
+  - {fileID: 11400000, guid: 8d6cc1e08bbe5e147b022eed13c5a78b, type: 2}
+  - {fileID: 11400000, guid: 60a26260878e2024aab0e1d5298ea83a, type: 2}
+  - {fileID: 11400000, guid: b0e621d66d89a13489dc5d8a862aa129, type: 2}
+  - {fileID: 11400000, guid: 5857e862ebdb9c244a55632c6a7b8d78, type: 2}
+  - {fileID: 11400000, guid: 40d8427dda7c87e42b2ee9f8d79e5a06, type: 2}
+  - {fileID: 11400000, guid: 41b8d07e33e0e9445bfdf7e199c2df59, type: 2}
+  - {fileID: 11400000, guid: 762e2c4b4d3661043b03f57f7fef1781, type: 2}
+  - {fileID: 11400000, guid: 06b41fd692e8e104387f2a98ee833e80, type: 2}
+  - {fileID: 11400000, guid: 7824cd87bf9aec14bad39afbb06c50b3, type: 2}
+  - {fileID: 11400000, guid: 1eb6ee0b665319c44b328565f9c53e09, type: 2}
+  - {fileID: 11400000, guid: cbb29759706ae6845bcf5421543046a6, type: 2}
+  - {fileID: 11400000, guid: 5765ad5540e309949a6b0b4aae46c0e9, type: 2}
+  - {fileID: 11400000, guid: 60cfaa0d9663f0e4e932f14910b99ce6, type: 2}
+  - {fileID: 11400000, guid: a121583c748aca84fbcb44fab1ca94d8, type: 2}
+  - {fileID: 11400000, guid: 1ce2e640379eda249bdea5cc7af35e94, type: 2}
+  _bronzeWheel: {fileID: 11400000, guid: e2dffe1f4f9dfad4599d6838a608ff53, type: 2}
+  _goldWheel: {fileID: 11400000, guid: 056bf9cac6a5a70418d6abcc77244e10, type: 2}
+  _silverWheel: {fileID: 11400000, guid: 5fe6ee3b041f90646b769c061eca2d5e, type: 2}
+  _safeZone: 5
+  _superZone: 30
+  _totalZoneCount: 120
+  currentZone: 1
+  currentWheel: {fileID: 11400000, guid: e2dffe1f4f9dfad4599d6838a608ff53, type: 2}

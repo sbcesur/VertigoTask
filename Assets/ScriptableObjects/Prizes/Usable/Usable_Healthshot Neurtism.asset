@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Usable_Healthshot Neurtism
   m_EditorClassIdentifier: 
   prizeName: healthshotNeuratism
-  prizeRarity: 0
-  icon: {fileID: 2800000, guid: 5363ce064c60ee14c9019afc3889ff57, type: 3}
+  _prizeRarity: 0
+  _icon: {fileID: 21300000, guid: 5363ce064c60ee14c9019afc3889ff57, type: 3}
+  _endsGame: 0

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6934e1a0dccf6b141882124b938ca06c, type: 3}
   m_Name: Weapon_Grenage m26
   m_EditorClassIdentifier: 
-  prizeName: grenade_m16
-  prizeRarity: 0
-  icon: {fileID: 2800000, guid: 56540f996b5a2e545a47d173eead1cb5, type: 3}
+  prizeName: grenade_m26
+  _prizeRarity: 0
+  _icon: {fileID: 21300000, guid: 56540f996b5a2e545a47d173eead1cb5, type: 3}
+  _endsGame: 0
   prizeWeapon: {fileID: 0}
