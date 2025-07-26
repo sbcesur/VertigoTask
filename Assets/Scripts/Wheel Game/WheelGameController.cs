@@ -13,7 +13,7 @@ namespace shooterGame.wheelGame
 
         private Prize[] allPrizes;
         private GameObject wheel;
-        private List<Prize> earnedPrizes;
+        private Stack<Prize> earnedPrizes;
 
         bool wheelIsSpinning = false;
 
@@ -120,6 +120,7 @@ namespace shooterGame.wheelGame
                 List<Prize> prizesToSelectFrom =  raritySortedPrizes[rarity];
                 int prizeIndex = UnityEngine.Random.Range(0, prizesToSelectFrom.Count);
                 Prize selectedPrize = prizesToSelectFrom[prizeIndex];
+                wheelGameData.currentWheel.slots[i].prize = selectedPrize;
                 wheelGameData.currentWheel.slots[i].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = selectedPrize.icon;
                 print("i = " + i);
             }
@@ -169,11 +170,21 @@ namespace shooterGame.wheelGame
             wheelIsSpinning = false;
             ChooseRandomPrizeFromWheel();
             ShowChosenPrize();
+
+            if(earnedPrizes.Peek().endsGame)
+            {
+                //bomb exploded
+            }
+            else
+            {
+                //next level or leave game
+            }
         }
 
         private void ChooseRandomPrizeFromWheel()
         {
-
+            int chossenPrizeIndex = Random.Range(0, wheelGameData.currentWheel.slots.Count);
+            earnedPrizes.Push(wheelGameData.currentWheel.slots[chossenPrizeIndex].prize);
         }
 
         private void ShowChosenPrize()
