@@ -13,6 +13,8 @@ public class PrizeController : MonoBehaviour
     private Stack<Prize> _earnedPrizes;
     private Dictionary<prizeRarities, List<Prize>> raritySortedPrizes = new Dictionary<prizeRarities, List<Prize>>();
 
+    private Prize selectedPrize;
+
     public Stack<Prize> earnedPrizes
     {
         get { return _earnedPrizes; }
@@ -67,7 +69,7 @@ public class PrizeController : MonoBehaviour
             prizeRarities rarity = GetPrizeRarityFromZoneNo();
             List<Prize> prizesToSelectFrom = raritySortedPrizes[rarity];
             int prizeIndex = UnityEngine.Random.Range(0, prizesToSelectFrom.Count);
-            Prize selectedPrize = prizesToSelectFrom[prizeIndex];
+            selectedPrize = prizesToSelectFrom[prizeIndex];
             wheelGameData.currentWheel.slots[i].prize = selectedPrize;
             wheelGameData.currentWheel.slots[i].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = selectedPrize.icon;
             wheelGameData.currentWheel.slots[i].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().preserveAspect = true;

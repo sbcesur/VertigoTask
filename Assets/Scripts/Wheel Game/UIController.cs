@@ -25,7 +25,6 @@ namespace shooterGame.wheelGame
             gameController.wheelSpawner.enableSpin = EnableSpinButton;
             gameController.succes = ShowSuccesUI;
             gameController.fail = showFailUI;
-            gameController.enableSpin = EnableSpinButton;
 
             //buttons
             nextZoneButton.buttonAction = moveToNextZone;
