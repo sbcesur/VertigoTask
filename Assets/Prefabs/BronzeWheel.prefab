@@ -286,6 +286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WheelSlotsParentBronze
       objectReference: {fileID: 0}
+    - target: {fileID: 8842799132071793743, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
+      propertyPath: m_TagString
+      value: wheelSlotParent
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
 --- !u!224 &8915601280596223170 stripped

@@ -14,7 +14,22 @@ namespace shooterGame.wheelGame
         public GameObject wheelPrefab
         {
             get { return _wheelPrefab; }
-        }    
+        }
 
+
+        public Transform FindChildWithTag(Transform parent, string tag)
+        {
+            if (parent.CompareTag(tag))
+                return parent;
+
+            foreach (Transform child in parent)
+            {
+                Transform result = FindChildWithTag(child, tag);
+                if (result != null)
+                    return result;
+            }
+
+            return null;
+        }
     }
 }

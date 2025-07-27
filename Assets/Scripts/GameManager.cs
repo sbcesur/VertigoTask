@@ -14,6 +14,7 @@ namespace shooterGame
 {
     public class GameManager : MonoBehaviour
     {
+        public Transform canvas;
         public wheelGame.WheelGameController wheelGameController;
         private int wheelGamestartZone = 1;
         private bool wheelGameActive = false;
