@@ -31,6 +31,7 @@ namespace shooterGame.wheelGame
         //wheel game entry point
         public void StartWheelGame(int startZone)
         {
+            prizeController.prizeInitializer.InitializePrizes();
             wheelGameData.currentZone = startZone;
             wheel = wheelSpawner.SpawnWheel();
             prizeController.PutPrizesOnWheel();
@@ -41,6 +42,7 @@ namespace shooterGame.wheelGame
             wheelGameData.currentZone++;
             wheel = wheelSpawner.SpawnWheel();
             prizeController.PutPrizesOnWheel();
+            prizeController.bombSelector.CondPutBombOnWheel();
         }
 
         public void SpinWheel()

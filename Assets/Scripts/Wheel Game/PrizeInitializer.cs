@@ -17,6 +17,7 @@ namespace shooterGame.wheelGame
 
         public void InitializePrizes()
         {
+            print("initializing przes");
             //initialize prize data
             _allPrizes = _wheelGameData.allPrizes;
 

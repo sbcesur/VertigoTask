@@ -9,6 +9,14 @@ namespace shooterGame.wheelGame
     public class PrizeSelectionForWheel : MonoBehaviour
     {
         [SerializeField] private WheelGameData wheelGameData;
+        private List<Prize> _selectedPrizes = new List<Prize>();
+        private Prize selectedPrize;
+
+        public List<Prize> selectedPrizes
+        {
+            get { return _selectedPrizes; }
+        }
+
         public void GetRandomPrizesForWheel(Dictionary<prizeRarities, List<Prize>> raritySortedPrizes)
         {
             for (int i = 0; i < wheelGameData.currentWheel.slots.Count; i++)
@@ -17,10 +25,20 @@ namespace shooterGame.wheelGame
                 List<Prize> prizesToSelectFrom = raritySortedPrizes[rarity];
                 int prizeIndex = UnityEngine.Random.Range(0, prizesToSelectFrom.Count);
                 Prize selectedPrize = prizesToSelectFrom[prizeIndex];
-                wheelGameData.currentWheel.slots[i].prize = selectedPrize;
+                _selectedPrizes.Add(selectedPrize);
+            }
+        }
+
+        public void PutSelectedPrizesOnWheel()
+        {
+            for (int i = 0; i < wheelGameData.currentWheel.slots.Count; i++)
+            {
+                wheelGameData.currentWheel.slots[i].prize = _selectedPrizes[i];
                 wheelGameData.currentWheel.slots[i].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = selectedPrize.icon;
                 wheelGameData.currentWheel.slots[i].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().preserveAspect = true;
             }
+
+            _selectedPrizes.Clear();
         }
 
         private prizeRarities GetPrizeRarityFromZoneNo()

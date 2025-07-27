@@ -17,6 +17,7 @@ namespace shooterGame.wheelGame
         [Header("Scripts")]
         public PrizeInitializer prizeInitializer;
         public PrizeSelectionForWheel prizeSelectionForWheel;
+        public BombSelector bombSelector;
 
         public Stack<Prize> earnedPrizes
         {
@@ -24,8 +25,19 @@ namespace shooterGame.wheelGame
         }
         public void PutPrizesOnWheel()
         {
-            prizeInitializer.InitializePrizes();
             prizeSelectionForWheel.GetRandomPrizesForWheel(prizeInitializer.raritySortedPrizes);
+
+            for (int i = 0; i < wheelGameData.currentWheel.slots.Count; i++)
+            {
+                PutPrizeOnWheelSlot(prizeSelectionForWheel.selectedPrizes[i], i);
+            }
+        }
+
+        public void PutPrizeOnWheelSlot(Prize prize, int slotNo)
+        {
+            wheelGameData.currentWheel.slots[slotNo].prize = prize;
+            wheelGameData.currentWheel.slots[slotNo].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = prize.icon;
+            wheelGameData.currentWheel.slots[slotNo].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().preserveAspect = true;
         }
 
         public int SelectRandomPrizeFromWheel()
