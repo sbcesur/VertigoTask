@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c2cecda17f65648ad8cfa8caa69b08, type: 3}
+  m_Name: SiverWheel
+  m_EditorClassIdentifier: 
+  slots:
+  - prize: {fileID: 0}
+    slotTransform: {fileID: 0}
+  - prize: {fileID: 0}
+    slotTransform: {fileID: 0}
+  - prize: {fileID: 0}
+    slotTransform: {fileID: 0}
+  - prize: {fileID: 0}
+    slotTransform: {fileID: 0}
+  - prize: {fileID: 0}
+    slotTransform: {fileID: 0}
+  - prize: {fileID: 0}
+    slotTransform: {fileID: 0}
+  - prize: {fileID: 0}
+    slotTransform: {fileID: 0}
+  - prize: {fileID: 0}
+    slotTransform: {fileID: 0}
+  _wheelPrefab: {fileID: 4190354967925828697, guid: 70425d64fcc4c6a4d9a1aa3bd374bb9d, type: 3}
+  _wheelSlotsParent: {fileID: 7066385098299757845, guid: e596addb9dc08de49ac1ed5b562fbfa1, type: 3}
