@@ -3,103 +3,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrizeController : MonoBehaviour
+
+namespace shooterGame.wheelGame
 {
-    //temp bool for testing
-    public bool randomPrizeSelection = false;
-
-    public WheelGameData wheelGameData;
-    private Prize[] allPrizes;
-    private Stack<Prize> _earnedPrizes;
-    private Dictionary<prizeRarities, List<Prize>> raritySortedPrizes = new Dictionary<prizeRarities, List<Prize>>();
-
-    public Stack<Prize> earnedPrizes
+    public class PrizeController : MonoBehaviour
     {
-        get { return _earnedPrizes; }
-    }
-    private void Start()
-    {
-        //initialize prize data
-        allPrizes = wheelGameData.allPrizes;
-        _earnedPrizes = new Stack<Prize>();
+        //temp bool for testing
+        public bool randomPrizeSelection = false;
 
-        prizeRarities[] rarityTypes = (prizeRarities[])System.Enum.GetValues(typeof(prizeRarities));
+        public WheelGameData wheelGameData;
+        private Stack<Prize> _earnedPrizes = new Stack<Prize>();
+        [Space]
+        [Header("Scripts")]
+        public PrizeInitializer prizeInitializer;
+        public PrizeSelectionForWheel prizeSelectionForWheel;
 
-        for (int i = 0; i < rarityTypes.Length; i++)
+        public Stack<Prize> earnedPrizes
         {
-            raritySortedPrizes.Add(rarityTypes[i], new List<Prize>());
+            get { return _earnedPrizes; }
+        }
+        public void PutPrizesOnWheel()
+        {
+            prizeInitializer.InitializePrizes();
+            prizeSelectionForWheel.GetRandomPrizesForWheel(prizeInitializer.raritySortedPrizes);
         }
 
-        for (int i = 0; i < allPrizes.Length; i++)
+        public int SelectRandomPrizeFromWheel()
         {
-            //put prizes to dictionary accoring to their rarities
-            Prize prize = allPrizes[i];
+            int chosenPrizeIndex = UnityEngine.Random.Range(0, wheelGameData.currentWheel.slots.Count);
+            _earnedPrizes.Push(wheelGameData.currentWheel.slots[chosenPrizeIndex].prize);
 
-            if (raritySortedPrizes.ContainsKey(prize.prizeRarity))
-            {
-                raritySortedPrizes[prize.prizeRarity].Add(prize);
-            }
-            else
-            {
-                Debug.Log("Error " + prize.prizeRarity + " not found in the dictionary");
-            }
+            print("earned prize is " + _earnedPrizes.Peek().name);
+            return chosenPrizeIndex;
         }
-    }
-
-    public void PutPrizesOnWheel()
-    {
-        GetRandomPrizesForWheel();
-    }
-
-    public int SelectRandomPrizeFromWheel()
-    {
-        int chosenPrizeIndex = UnityEngine.Random.Range(0, wheelGameData.currentWheel.slots.Count);
-        _earnedPrizes.Push(wheelGameData.currentWheel.slots[chosenPrizeIndex].prize);
-
-        print("earned prize is " + _earnedPrizes.Peek().name);
-        return chosenPrizeIndex;
-    }
-
-    private void GetRandomPrizesForWheel()
-    {
-        for (int i = 0; i < wheelGameData.currentWheel.slots.Count; i++)
-        {
-            prizeRarities rarity = GetPrizeRarityFromZoneNo();
-            List<Prize> prizesToSelectFrom = raritySortedPrizes[rarity];
-            int prizeIndex = UnityEngine.Random.Range(0, prizesToSelectFrom.Count);
-            Prize selectedPrize = prizesToSelectFrom[prizeIndex];
-            wheelGameData.currentWheel.slots[i].prize = selectedPrize;
-            wheelGameData.currentWheel.slots[i].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = selectedPrize.icon;
-            wheelGameData.currentWheel.slots[i].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().preserveAspect = true;
-        }
-    }  
-
-    private prizeRarities GetPrizeRarityFromZoneNo()
-    {
-        float normalizedZoneNo = (float)wheelGameData.currentZone / (float)wheelGameData.totalZoneCount;
-        prizeRarities[] rarities = (prizeRarities[])System.Enum.GetValues(typeof(prizeRarities));
-        int rarityTypeNo = rarities.Length - 1;
-        float standartDeviation = 0.75f;
-        float mean = normalizedZoneNo * (float)rarityTypeNo;
-
-        float rawIndex = GetGaussian(mean, standartDeviation);
-        int rarityIndex = Mathf.Clamp(Mathf.RoundToInt(rawIndex), 0, rarityTypeNo);
-
-        //print(normalizedZoneNo);
-
-        return rarities[rarityIndex];
-    }
-
-
-    //helper script
-    float GetGaussian(float mean, float stdDev)
-    {
-        float u1 = UnityEngine.Random.value;
-        float u2 = UnityEngine.Random.value;
-
-        float randStdNormal = Mathf.Sqrt(-2.0f * Mathf.Log(u1)) *
-                              Mathf.Sin(2.0f * Mathf.PI * u2);
-
-        return mean + stdDev * randStdNormal;
     }
 }

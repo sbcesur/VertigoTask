@@ -88,19 +88,5 @@ namespace shooterGame.wheelGame
         {
 
         }
-
-        /*
-        private void ShowResultUI()
-        {
-            if(!earnedPrizes.Peek().endsGame)
-            {
-                succes?.Invoke();
-            }
-            else
-            {
-                fail?.Invoke();
-            }
-        }
-        */
     }
 }
