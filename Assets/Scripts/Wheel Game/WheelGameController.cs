@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.UIElements;
-using UnityEngine.UI;
+using System;
 
 
 namespace shooterGame.wheelGame
@@ -22,6 +20,9 @@ namespace shooterGame.wheelGame
 
         private bool wheelIsSpinning = false;
 
+        public Action succes;
+        public Action fail;
+        public Action spinEnded;
 
         private bool isSuperZone() => wheelGameData.currentZone % wheelGameData.superZone == 0;
         private bool isSafeZone() => wheelGameData.currentZone % wheelGameData.safeZone == 0;
@@ -74,9 +75,13 @@ namespace shooterGame.wheelGame
             //LoadNextZone();
         }
 
-        private void LoadNextZone()
+        public void LoadNextZone()
         {
-
+            wheelGameData.currentZone++;
+            GetWheelDataForZone();
+            InstantiateCurrentWheel();
+            GetWheelSlots();
+            GetRandomPrizesForWheel();
         }
 
         private void GetWheelDataForZone()
@@ -189,12 +194,13 @@ namespace shooterGame.wheelGame
         {
             print("spin ended");
             wheelIsSpinning = false;
-            ShowChosenPrize();    
+            ShowChosenPrize();
+            spinEnded?.Invoke();
         }
 
         private void ChooseRandomPrizeFromWheel()
         {
-            chosenPrizeIndex = Random.Range(0, wheelGameData.currentWheel.slots.Count);
+            chosenPrizeIndex = UnityEngine.Random.Range(0, wheelGameData.currentWheel.slots.Count);
             earnedPrizes.Push(wheelGameData.currentWheel.slots[chosenPrizeIndex].prize);
 
             print("earned prize is " + earnedPrizes.Peek().name);
@@ -205,6 +211,18 @@ namespace shooterGame.wheelGame
             print("showing card");
             prizeCard = Instantiate(CardPrefab, Canvas);
             prizeCard.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = earnedPrizes.Peek().icon;
+        }
+
+        private void ShowResultUI()
+        {
+            if(!earnedPrizes.Peek().endsGame)
+            {
+                succes?.Invoke();
+            }
+            else
+            {
+                fail?.Invoke();
+            }
         }
 
 

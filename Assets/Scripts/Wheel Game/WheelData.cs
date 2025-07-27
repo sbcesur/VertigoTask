@@ -9,6 +9,7 @@ namespace shooterGame.wheelGame
     {
         public List<WheelSlot> slots;
         [SerializeField] private GameObject _wheelPrefab;
+        [SerializeField] private GameObject _wheelSlotsParent;
 
         public GameObject wheelPrefab
         {
