@@ -18,11 +18,16 @@ public class WheelSpawner : MonoBehaviour
     private bool isSuperZone() => wheelGameData.currentZone % wheelGameData.superZone == 0;
     private bool isSafeZone() => wheelGameData.currentZone % wheelGameData.safeZone == 0;
 
-    public void SpawnWheel()
+
+    public GameObject SpawnWheel()
     {
         GetWheelDataForZone();
         InstantiateCurrentWheel();
         GetWheelSlots();
+
+        enableSpin?.Invoke();
+
+        return wheel;
     }
 
     private void GetWheelDataForZone()

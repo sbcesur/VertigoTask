@@ -9,13 +9,17 @@ namespace shooterGame.wheelGame
     {
         public List<WheelSlot> slots;
         [SerializeField] private GameObject _wheelPrefab;
-        [SerializeField] private GameObject _wheelSlotsParent;
+        [SerializeField] private string _slotParentTag;
 
         public GameObject wheelPrefab
         {
             get { return _wheelPrefab; }
         }
 
+        public string slotParentTag
+        {
+            get { return _slotParentTag; }  
+        }
 
         public Transform FindChildWithTag(Transform parent, string tag)
         {

@@ -10,6 +10,7 @@ namespace shooterGame.wheelGame
         [SerializeField] private prizeRarities _prizeRarity;
         [SerializeField] private Sprite _icon;
         [SerializeField] private bool _endsGame = false;
+        public int occupiedSlotIndex;
 
         public prizeRarities prizeRarity
         {

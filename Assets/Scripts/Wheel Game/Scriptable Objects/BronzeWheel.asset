@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slots:
   - prize: {fileID: 0}
-    slot: {fileID: 0}
+    slotTransform: {fileID: 0}
   - prize: {fileID: 0}
-    slot: {fileID: 0}
+    slotTransform: {fileID: 0}
   - prize: {fileID: 0}
-    slot: {fileID: 0}
+    slotTransform: {fileID: 0}
   - prize: {fileID: 0}
-    slot: {fileID: 0}
+    slotTransform: {fileID: 0}
   - prize: {fileID: 0}
-    slot: {fileID: 0}
+    slotTransform: {fileID: 0}
   - prize: {fileID: 0}
-    slot: {fileID: 0}
+    slotTransform: {fileID: 0}
   - prize: {fileID: 0}
-    slot: {fileID: 0}
+    slotTransform: {fileID: 0}
   - prize: {fileID: 0}
-    slot: {fileID: 0}
+    slotTransform: {fileID: 0}
   _wheelPrefab: {fileID: 4190354967925828697, guid: 4546485d7390ab7459d6b8f33a774a24, type: 3}
+  _slotParentTag: wheelSlotParent

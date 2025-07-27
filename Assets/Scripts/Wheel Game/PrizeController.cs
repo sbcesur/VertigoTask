@@ -10,14 +10,18 @@ public class PrizeController : MonoBehaviour
 
     public WheelGameData wheelGameData;
     private Prize[] allPrizes;
-    private Stack<Prize> earnedPrizes;
+    private Stack<Prize> _earnedPrizes;
     private Dictionary<prizeRarities, List<Prize>> raritySortedPrizes = new Dictionary<prizeRarities, List<Prize>>();
 
+    public Stack<Prize> earnedPrizes
+    {
+        get { return _earnedPrizes; }
+    }
     private void Start()
     {
         //initialize prize data
         allPrizes = wheelGameData.allPrizes;
-        earnedPrizes = new Stack<Prize>();
+        _earnedPrizes = new Stack<Prize>();
 
         prizeRarities[] rarityTypes = (prizeRarities[])System.Enum.GetValues(typeof(prizeRarities));
 
@@ -47,13 +51,13 @@ public class PrizeController : MonoBehaviour
         GetRandomPrizesForWheel();
     }
 
-    public Prize SelectRandomPrizeFromWheel()
+    public int SelectRandomPrizeFromWheel()
     {
         int chosenPrizeIndex = UnityEngine.Random.Range(0, wheelGameData.currentWheel.slots.Count);
-        earnedPrizes.Push(wheelGameData.currentWheel.slots[chosenPrizeIndex].prize);
+        _earnedPrizes.Push(wheelGameData.currentWheel.slots[chosenPrizeIndex].prize);
 
-        print("earned prize is " + earnedPrizes.Peek().name);
-        return earnedPrizes.Peek();
+        print("earned prize is " + _earnedPrizes.Peek().name);
+        return chosenPrizeIndex;
     }
 
     private void GetRandomPrizesForWheel()

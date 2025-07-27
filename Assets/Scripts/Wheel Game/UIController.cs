@@ -21,7 +21,7 @@ namespace shooterGame.wheelGame
 
         private void Start()
         {
-            gameController.spinEnded = EnableSpinButton;
+            gameController.wheelSpawner.enableSpin = EnableSpinButton;
             gameController.succes = ShowSuccesUI;
             gameController.fail = showFailUI;
 
