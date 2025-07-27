@@ -6,7 +6,7 @@ using UnityEngine;
 public class PrizeController : MonoBehaviour
 {
     //temp bool for testing
-    public bool test = false;
+    public bool randomPrizeSelection = false;
 
     public WheelGameData wheelGameData;
     private Prize[] allPrizes;
@@ -72,7 +72,7 @@ public class PrizeController : MonoBehaviour
             wheelGameData.currentWheel.slots[i].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = selectedPrize.icon;
             wheelGameData.currentWheel.slots[i].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().preserveAspect = true;
         }
-    }
+    }  
 
     private prizeRarities GetPrizeRarityFromZoneNo()
     {
@@ -101,13 +101,5 @@ public class PrizeController : MonoBehaviour
                               Mathf.Sin(2.0f * Mathf.PI * u2);
 
         return mean + stdDev * randStdNormal;
-    }
-
-    private void Update()
-    {
-        if(test)
-        {
-            
-        }
     }
 }

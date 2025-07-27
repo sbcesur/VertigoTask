@@ -14,6 +14,7 @@ namespace shooterGame
 {
     public class GameManager : MonoBehaviour
     {
+        public PlayerController playerController;
         public Transform canvas;
         public wheelGame.WheelGameController wheelGameController;
         private int wheelGamestartZone = 1;
@@ -30,8 +31,9 @@ namespace shooterGame
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (!wheelGameActive && Input.GetMouseButtonDown(0))
             {
+                wheelGameActive = true;
                 wheelGameController.StartWheelGame(wheelGameController.wheelGameData.currentZone);
             }
         }

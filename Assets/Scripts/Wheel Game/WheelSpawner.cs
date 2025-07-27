@@ -67,22 +67,9 @@ public class WheelSpawner : MonoBehaviour
     {
         Transform wheelSlotParent = wheelGameData.currentWheel.FindChildWithTag(wheel.transform, "wheelSlotParent");
         for (int i = 0; i < wheelGameData.currentWheel.slots.Count; i++)
-        {
-             
+        {     
             wheelGameData.currentWheel.slots[i].slotTransform = wheelSlotParent.GetChild(i);
-            print(wheelGameData.currentWheel.slots[i].slotTransform.name);
-        }
-    }
-
-
-    private void Update()
-    {
-        if(testCode)
-        {
-            if(Input.GetMouseButtonDown(0))
-            {
-                SpawnWheel();
-            }
+            //print(wheelGameData.currentWheel.slots[i].slotTransform.name);
         }
     }
 }

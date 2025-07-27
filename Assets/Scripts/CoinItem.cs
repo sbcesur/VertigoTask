@@ -1,13 +1,13 @@
+using shooterGame;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace shooterGame
 {
-    public class PlayerController : Character
+    public class Currency : Item
     {
-        [SerializeField] private PlayerInventory _inventory;
-
-
+        public int amount;
     }
 }

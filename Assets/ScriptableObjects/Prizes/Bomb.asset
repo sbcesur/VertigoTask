@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a399678850250244f9e774ab889a93bd, type: 3}
-  m_Name: New Bomb
+  m_Name: Bomb
   m_EditorClassIdentifier: 
   prizeName: Bomb
   _prizeRarity: 1

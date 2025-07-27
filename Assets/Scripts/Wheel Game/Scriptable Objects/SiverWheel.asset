@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: SiverWheel
   m_EditorClassIdentifier: 
   slots:
-  - prize: {fileID: 0}
+  - prize: {fileID: 11400000, guid: 8be9d3bde30551841b2eab4b6fe73b18, type: 2}
     slotTransform: {fileID: 0}
-  - prize: {fileID: 0}
+  - prize: {fileID: 11400000, guid: 8be9d3bde30551841b2eab4b6fe73b18, type: 2}
     slotTransform: {fileID: 0}
-  - prize: {fileID: 0}
+  - prize: {fileID: 11400000, guid: 8be9d3bde30551841b2eab4b6fe73b18, type: 2}
     slotTransform: {fileID: 0}
-  - prize: {fileID: 0}
+  - prize: {fileID: 11400000, guid: 8be9d3bde30551841b2eab4b6fe73b18, type: 2}
     slotTransform: {fileID: 0}
-  - prize: {fileID: 0}
+  - prize: {fileID: 11400000, guid: 8be9d3bde30551841b2eab4b6fe73b18, type: 2}
     slotTransform: {fileID: 0}
-  - prize: {fileID: 0}
+  - prize: {fileID: 11400000, guid: 8be9d3bde30551841b2eab4b6fe73b18, type: 2}
     slotTransform: {fileID: 0}
   - prize: {fileID: 0}
     slotTransform: {fileID: 0}

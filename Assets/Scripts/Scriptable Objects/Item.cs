@@ -7,9 +7,13 @@ namespace shooterGame
 {
     public abstract class Item : ScriptableObject
     {
-        [SerializeField] protected string itemName;
+        [SerializeField] protected string _itemName;
         [SerializeField] private GameObject prefab;
 
-        public abstract void AddToInventory();
+        public string itemName
+        {
+            get { return _itemName; }
+        }
+            
     }
 }

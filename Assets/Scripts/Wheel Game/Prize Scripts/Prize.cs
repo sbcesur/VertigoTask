@@ -9,6 +9,7 @@ namespace shooterGame.wheelGame
         [SerializeField] string prizeName;
         [SerializeField] private prizeRarities _prizeRarity;
         [SerializeField] private Sprite _icon;
+        [SerializeField] private Item _prizeItem;
         [SerializeField] private bool _endsGame = false;
         public int occupiedSlotIndex;
 
@@ -25,6 +26,11 @@ namespace shooterGame.wheelGame
         public Sprite icon
         {
             get { return _icon; }
+        }
+
+        public Item prizeItem
+        {
+            get { return _prizeItem; }
         }
 
         public void AddPrize()

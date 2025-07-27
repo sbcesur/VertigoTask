@@ -39,7 +39,8 @@ namespace shooterGame.wheelGame
         public void LoadNextZone()
         {
             wheelGameData.currentZone++;
-
+            wheel = wheelSpawner.SpawnWheel();
+            prizeController.PutPrizesOnWheel();
         }
 
         public void SpinWheel()
@@ -53,9 +54,7 @@ namespace shooterGame.wheelGame
                 float targetAngle = chosenPrizeIndex * (360.0f / (float)wheelGameData.currentWheel.slots.Count);
                 int revolutionCount = 3;
 
-                print("target angle = " + targetAngle);
                 print("earned prize index = " + chosenPrizeIndex);
-                print("spinning wheel");
 
                 Transform objectToRotate = wheelGameData.currentWheel.FindChildWithTag(wheel.transform, wheelGameData.currentWheel.slotParentTag);
                 objectToRotate.DORotate(new Vector3(0, 0, revolutionCount * 360.0f + targetAngle ), 3f, RotateMode.LocalAxisAdd)
@@ -65,6 +64,27 @@ namespace shooterGame.wheelGame
         }
 
         void WheelSpinEnded()
+        {
+            wheel.SetActive(false);
+            wheelIsSpinning = false;
+
+            if (!prizeController.earnedPrizes.Peek().endsGame)
+            {
+                succes?.Invoke();
+            }
+            else
+            {
+                fail?.Invoke();
+            }
+        }
+
+        public void DropPrizes()
+        {
+            prizeController.earnedPrizes.Clear();
+            print(prizeController.earnedPrizes.Count);
+        }
+
+        public void ExitWheelGame()
         {
 
         }
