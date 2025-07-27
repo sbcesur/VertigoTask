@@ -49,5 +49,5 @@ MonoBehaviour:
   _safeZone: 5
   _superZone: 30
   _totalZoneCount: 120
-  currentZone: 1
-  currentWheel: {fileID: 11400000, guid: e2dffe1f4f9dfad4599d6838a608ff53, type: 2}
+  currentZone: 10
+  currentWheel: {fileID: 11400000, guid: 5fe6ee3b041f90646b769c061eca2d5e, type: 2}

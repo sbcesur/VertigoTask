@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 
 
-public class WheelController : MonoBehaviour
+public class WheelSpawner : MonoBehaviour
 {
     //temp bool for test 
     public bool testCode = false;
@@ -18,7 +18,7 @@ public class WheelController : MonoBehaviour
     private bool isSuperZone() => wheelGameData.currentZone % wheelGameData.superZone == 0;
     private bool isSafeZone() => wheelGameData.currentZone % wheelGameData.safeZone == 0;
 
-    public void GetWheel()
+    public void SpawnWheel()
     {
         GetWheelDataForZone();
         InstantiateCurrentWheel();
@@ -76,7 +76,7 @@ public class WheelController : MonoBehaviour
         {
             if(Input.GetMouseButtonDown(0))
             {
-                GetWheel();
+                SpawnWheel();
             }
         }
     }

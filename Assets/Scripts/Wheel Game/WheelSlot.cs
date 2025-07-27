@@ -9,5 +9,6 @@ namespace shooterGame.wheelGame
     {
         public Prize prize;
         public Transform slotTransform;
+        private int id;
     }
 }

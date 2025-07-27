@@ -24,23 +24,16 @@ namespace shooterGame
         void Start()
         {
             GameManager.Instance = this;
+
         }
 
-        // Update is called once per frame
- 
-        /*
-        void Update()
+
+        private void Update()
         {
-            if (!wheelGameActive)
-            { 
-                if (Input.GetMouseButtonDown(0) == true)
-                {
-                    wheelGameActive = true;
-                    wheelGameController.enabled = true;
-                    wheelGameController.StartWheelGame(wheelGamestartZone);
-                }
+            if (Input.GetMouseButtonDown(0))
+            {
+                wheelGameController.StartWheelGame(wheelGameController.wheelGameData.currentZone);
             }
         }
-        */
     }
 }
