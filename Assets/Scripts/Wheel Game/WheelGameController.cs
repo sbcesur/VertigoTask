@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 
 namespace shooterGame.wheelGame
@@ -10,12 +12,16 @@ namespace shooterGame.wheelGame
     {
         public WheelGameData wheelGameData;
         public Transform Canvas;
+        public GameObject CardPrefab;
 
         private Prize[] allPrizes;
         private GameObject wheel;
         private Stack<Prize> earnedPrizes;
+        private GameObject prizeCard;
+        private int chosenPrizeIndex;
 
-        bool wheelIsSpinning = false;
+        private bool wheelIsSpinning = false;
+
 
         private bool isSuperZone() => wheelGameData.currentZone % wheelGameData.superZone == 0;
         private bool isSafeZone() => wheelGameData.currentZone % wheelGameData.safeZone == 0;
@@ -25,7 +31,12 @@ namespace shooterGame.wheelGame
         // Start is called before the first frame update
         void Start()
         {
+
+            DOTween.Init(true, true, LogBehaviour.Verbose);
+
             allPrizes = wheelGameData.allPrizes;
+            earnedPrizes = new Stack<Prize>();
+
             prizeRarities[] rarityTypes = (prizeRarities[])System.Enum.GetValues(typeof(prizeRarities));
 
             for (int i = 0; i < rarityTypes.Length; i++)
@@ -122,7 +133,7 @@ namespace shooterGame.wheelGame
                 Prize selectedPrize = prizesToSelectFrom[prizeIndex];
                 wheelGameData.currentWheel.slots[i].prize = selectedPrize;
                 wheelGameData.currentWheel.slots[i].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = selectedPrize.icon;
-                print("i = " + i);
+                wheelGameData.currentWheel.slots[i].slotTransform.GetChild(0).GetComponent<UnityEngine.UI.Image>().preserveAspect = true;
             }
         }
 
@@ -155,11 +166,20 @@ namespace shooterGame.wheelGame
 
         public void SpinWheel()
         {
+            ChooseRandomPrizeFromWheel();
+
             if (!wheelIsSpinning)
             {
                 wheelIsSpinning = true;
+
+                float targetAngle = chosenPrizeIndex * (360.0f / (float)wheelGameData.currentWheel.slots.Count);
+                int revolutionCount = 3;
+
+                print("target angle = " + targetAngle);
+                print("earned prize index = " + chosenPrizeIndex);
+
                 print("spinning wheel");
-                wheel.transform.DORotate(new Vector3(0, 0, -1080), 3f, RotateMode.FastBeyond360)
+                wheel.transform.GetChild(0).DORotate(new Vector3(0, 0, revolutionCount * 360.0f + targetAngle ), 3f, RotateMode.LocalAxisAdd)
                      .SetEase(Ease.OutCubic)
                      .OnComplete(WheelSpinEnded);
             }
@@ -167,29 +187,24 @@ namespace shooterGame.wheelGame
 
         private void WheelSpinEnded()
         {
+            print("spin ended");
             wheelIsSpinning = false;
-            ChooseRandomPrizeFromWheel();
-            ShowChosenPrize();
-
-            if(earnedPrizes.Peek().endsGame)
-            {
-                //bomb exploded
-            }
-            else
-            {
-                //next level or leave game
-            }
+            ShowChosenPrize();    
         }
 
         private void ChooseRandomPrizeFromWheel()
         {
-            int chossenPrizeIndex = Random.Range(0, wheelGameData.currentWheel.slots.Count);
-            earnedPrizes.Push(wheelGameData.currentWheel.slots[chossenPrizeIndex].prize);
+            chosenPrizeIndex = Random.Range(0, wheelGameData.currentWheel.slots.Count);
+            earnedPrizes.Push(wheelGameData.currentWheel.slots[chosenPrizeIndex].prize);
+
+            print("earned prize is " + earnedPrizes.Peek().name);
         }
 
         private void ShowChosenPrize()
         {
-
+            print("showing card");
+            prizeCard = Instantiate(CardPrefab, Canvas);
+            prizeCard.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = earnedPrizes.Peek().icon;
         }
 
 
