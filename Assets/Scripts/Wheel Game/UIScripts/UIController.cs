@@ -67,13 +67,15 @@ namespace shooterGame.wheelGame
 
         private void OnQuitClicked()
         {
-            gameController.ExitWheelGame();
             DisableUIElements();
+            gameController.ExitWheelGame();
         }
 
         private void OnQuitClickedOnFail()
         {
+            DisableUIElements();
             gameController.DropPrizes();
+            gameController.ExitWheelGame();
         }
 
         private void onSpinClicked()

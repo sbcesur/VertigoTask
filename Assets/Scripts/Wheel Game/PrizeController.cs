@@ -50,9 +50,32 @@ namespace shooterGame.wheelGame
             return chosenPrizeIndex;
         }
 
-        public void AddPrizesToInventory()
+        public void AddEarnedPrizesToInventory()
         {
+            if (_earnedPrizes.Peek() != null)
+            {
 
+
+                Debug.Log("earned : " + _earnedPrizes.Pop().name);
+                
+
+
+                //below code is the logic to add items to player inventory
+                //which requires creating scriptable item objects from assset menu
+                /*Item earnedItem = _earnedPrizes.Pop().prizeItem;
+
+                if (earnedItem != null)
+                {
+                    earnedItem.AddToInventory(playerInventory);
+                }
+                else
+                {
+                    //print error
+                }
+                */
+            }
         }
+
+
     }
 }

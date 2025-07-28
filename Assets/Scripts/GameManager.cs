@@ -43,5 +43,11 @@ namespace shooterGame
             wheelGameController.StartWheelGame(wheelGameController.wheelGameData.currentZone);
             UIManager.Instance.DisableTapToStartText();
         }
+
+        public void ExitWheelGame()
+        {
+            wheelGameActive = false;
+            UIManager.Instance.EnableTapToStartText();
+        }
     }
 }

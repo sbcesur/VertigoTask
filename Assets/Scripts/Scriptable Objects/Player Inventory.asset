@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4196f4c25cbb34aa38a8021d01c9fc, type: 3}
   m_Name: Player Inventory
   m_EditorClassIdentifier: 
-  WeaponItemSlots: 20
+  WeaponItemSlots: 50
   weapons: []

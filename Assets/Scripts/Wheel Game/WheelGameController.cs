@@ -88,7 +88,8 @@ namespace shooterGame.wheelGame
 
         public void ExitWheelGame()
         {
-
+            prizeController.AddEarnedPrizesToInventory();
+            GameManager.Instance.ExitWheelGame();
         }
     }
 }
