@@ -14,19 +14,22 @@ namespace shooterGame.wheelGame
 
         public void CondPutBombOnWheel()
         {
-            if(BombOnWheel())
+            if (wheelGameData.currentWheel != wheelGameData.goldWheelData && wheelGameData.currentWheel != wheelGameData.silverWheelData)
             {
-                int bombSlotNo = ChooseSlotForBomb();
-                ReplacePrize(bomb, bombSlotNo);
+                if (BombOnWheel())
+                {
+                    int bombSlotNo = ChooseSlotForBomb();
+                    ReplacePrize(bomb, bombSlotNo);
 
-                print("putting bomb to slot " + bombSlotNo);
+                    print("putting bomb to slot " + bombSlotNo);
+                }
             }
         }
 
         private bool BombOnWheel()
         {
-            //int rand = UnityEngine.Random.Range(0, wheelGameData.currentZone);
-            int rand = 0;
+            int rand = UnityEngine.Random.Range(0, wheelGameData.totalZoneCount);
+
             if(rand < wheelGameData.currentZone)
             {
                 return true;

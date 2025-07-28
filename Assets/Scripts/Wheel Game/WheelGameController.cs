@@ -19,6 +19,7 @@ namespace shooterGame.wheelGame
         public Action succes;
         public Action fail;
         public Action spinEnded;
+        public Action updateZoneNoText;
 
         [Space]
         [Header("Scripts")]
@@ -35,6 +36,7 @@ namespace shooterGame.wheelGame
             wheelGameData.currentZone = startZone;
             wheel = wheelSpawner.SpawnWheel();
             prizeController.PutPrizesOnWheel();
+            updateZoneNoText?.Invoke();
         }
 
         public void LoadNextZone()
@@ -43,6 +45,7 @@ namespace shooterGame.wheelGame
             wheel = wheelSpawner.SpawnWheel();
             prizeController.PutPrizesOnWheel();
             prizeController.bombSelector.CondPutBombOnWheel();
+            updateZoneNoText?.Invoke();
         }
 
         public void SpinWheel()

@@ -9,6 +9,12 @@ namespace shooterGame.wheelGame
         private Prize[] _allPrizes;
         [SerializeField] private WheelGameData _wheelGameData;
         private Dictionary<prizeRarities, List<Prize>> _raritySortedPrizes = new Dictionary<prizeRarities, List<Prize>>();
+        private bool Initialized;
+
+        private void Start()
+        {
+            Initialized = false;
+        }
 
         public Dictionary<prizeRarities, List<Prize>> raritySortedPrizes
         {
@@ -17,29 +23,35 @@ namespace shooterGame.wheelGame
 
         public void InitializePrizes()
         {
-            print("initializing przes");
-            //initialize prize data
-            _allPrizes = _wheelGameData.allPrizes;
 
-            prizeRarities[] rarityTypes = (prizeRarities[])System.Enum.GetValues(typeof(prizeRarities));
-
-            for (int i = 0; i < rarityTypes.Length; i++)
+            if (!Initialized)
             {
-                _raritySortedPrizes.Add(rarityTypes[i], new List<Prize>());
-            }
+                Initialized = true;
 
-            for (int i = 0; i < _allPrizes.Length; i++)
-            {
-                //put prizes to dictionary accoring to their rarities
-                Prize prize = _allPrizes[i];
+                print("initializing przes");
+                //initialize prize data
+                _allPrizes = _wheelGameData.allPrizes;
 
-                if (_raritySortedPrizes.ContainsKey(prize.prizeRarity))
+                prizeRarities[] rarityTypes = (prizeRarities[])System.Enum.GetValues(typeof(prizeRarities));
+
+                for (int i = 0; i < rarityTypes.Length; i++)
                 {
-                    _raritySortedPrizes[prize.prizeRarity].Add(prize);
+                    _raritySortedPrizes.Add(rarityTypes[i], new List<Prize>());
                 }
-                else
+
+                for (int i = 0; i < _allPrizes.Length; i++)
                 {
-                    Debug.Log("Error " + prize.prizeRarity + " not found in the dictionary");
+                    //put prizes to dictionary accoring to their rarities
+                    Prize prize = _allPrizes[i];
+
+                    if (_raritySortedPrizes.ContainsKey(prize.prizeRarity))
+                    {
+                        _raritySortedPrizes[prize.prizeRarity].Add(prize);
+                    }
+                    else
+                    {
+                        Debug.Log("Error " + prize.prizeRarity + " not found in the dictionary");
+                    }
                 }
             }
         }

@@ -52,7 +52,7 @@ namespace shooterGame.wheelGame
 
         public void AddEarnedPrizesToInventory()
         {
-            if (_earnedPrizes.Peek() != null)
+            if (_earnedPrizes.Count != 0)
             {
 
 

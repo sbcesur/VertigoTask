@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -20,12 +21,14 @@ namespace shooterGame.wheelGame
         [SerializeField] private GameObject failUI;
         [SerializeField] private GameObject resultCard;
         [SerializeField] private GameObject resultCardParent;
+        [SerializeField] private TextMeshProUGUI ZoneNoText;
 
         private void Start()
         {
             gameController.wheelSpawner.enableSpin = EnableSpinButton;
             gameController.succes = ShowSuccesUI;
             gameController.fail = showFailUI;
+            gameController.updateZoneNoText = UpdateZoneText;
 
             //buttons
             nextZoneButton.buttonAction = moveToNextZone;
@@ -60,6 +63,7 @@ namespace shooterGame.wheelGame
         private void moveToNextZone()
         {
             print("moving to next zone");
+
             gameController.LoadNextZone();
 
             DisableUIElements();
@@ -91,6 +95,12 @@ namespace shooterGame.wheelGame
             succesUI.SetActive(false);
             failUI.SetActive(false);
             resultCardParent.SetActive(false);
+        }
+
+        private void UpdateZoneText()
+        {
+            string text = "CurrentZone " + gameController.wheelGameData.currentZone;
+            ZoneNoText.text = text;
         }
     }
 }
