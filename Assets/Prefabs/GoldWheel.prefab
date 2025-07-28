@@ -1707,6 +1707,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45
       objectReference: {fileID: 0}
+    - target: {fileID: 2911215675416920391, guid: dfe8fbe0ba10c1e48a363a1af8e9a20a, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265467508762016487, guid: dfe8fbe0ba10c1e48a363a1af8e9a20a, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292976981714626570, guid: dfe8fbe0ba10c1e48a363a1af8e9a20a, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
+      objectReference: {fileID: 0}
     - target: {fileID: 3910729404945143677, guid: dfe8fbe0ba10c1e48a363a1af8e9a20a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1831,6 +1843,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 145
       objectReference: {fileID: 0}
+    - target: {fileID: 5424118797593596302, guid: dfe8fbe0ba10c1e48a363a1af8e9a20a, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
+      objectReference: {fileID: 0}
     - target: {fileID: 5773609898964351889, guid: dfe8fbe0ba10c1e48a363a1af8e9a20a, type: 3}
       propertyPath: m_Name
       value: WheelSlotsParentGold
@@ -1859,6 +1875,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 6994717820204538010, guid: dfe8fbe0ba10c1e48a363a1af8e9a20a, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
+      objectReference: {fileID: 0}
     - target: {fileID: 7310207202062290807, guid: dfe8fbe0ba10c1e48a363a1af8e9a20a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.85
@@ -1866,6 +1886,10 @@ PrefabInstance:
     - target: {fileID: 7310207202062290807, guid: dfe8fbe0ba10c1e48a363a1af8e9a20a, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489960181474001755, guid: dfe8fbe0ba10c1e48a363a1af8e9a20a, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe8fbe0ba10c1e48a363a1af8e9a20a, type: 3}

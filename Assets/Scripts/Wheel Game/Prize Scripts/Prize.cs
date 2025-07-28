@@ -32,10 +32,5 @@ namespace shooterGame.wheelGame
         {
             get { return _prizeItem; }
         }
-
-        public void AddPrize()
-        {
-
-        }
     }
 }

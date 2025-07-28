@@ -14,6 +14,8 @@ namespace shooterGame
         {
             get { return _itemName; }
         }
+
+        public abstract void AddToInventory(Inventory inventory);
             
     }
 }

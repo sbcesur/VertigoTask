@@ -1627,10 +1627,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2682415523991360728}
     m_Modifications:
+    - target: {fileID: 202277510139948697, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
+      objectReference: {fileID: 0}
     - target: {fileID: 374490210690615982, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 10870bb45d2363f45a527838ab498df6, type: 3}
+    - target: {fileID: 512025485389334484, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
+      objectReference: {fileID: 0}
+    - target: {fileID: 574578442106934585, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
+      objectReference: {fileID: 0}
     - target: {fileID: 2084505571445799075, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1815,6 +1827,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45
       objectReference: {fileID: 0}
+    - target: {fileID: 5456726284855260996, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
+      objectReference: {fileID: 0}
     - target: {fileID: 5754201545228656809, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.85
@@ -1822,6 +1838,14 @@ PrefabInstance:
     - target: {fileID: 5754201545228656809, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879935233690397829, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
+      objectReference: {fileID: 0}
+    - target: {fileID: 7056650403590618704, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
+      propertyPath: m_Name
+      value: Prize_value
       objectReference: {fileID: 0}
     - target: {fileID: 7093679674790565993, guid: 14f537d33e9794344b154a7396f9e73f, type: 3}
       propertyPath: m_LocalScale.x

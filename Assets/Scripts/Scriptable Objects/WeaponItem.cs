@@ -9,5 +9,10 @@ namespace shooterGame
     public class WeaponItem : Item
     {
         [SerializeField] private float damage;
+
+        public override void AddToInventory(Inventory inventory)
+        {
+            inventory.AddWeaponToInventory(this);
+        }
     }
 }

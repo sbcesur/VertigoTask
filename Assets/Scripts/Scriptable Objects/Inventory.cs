@@ -6,17 +6,17 @@ using UnityEngine;
 
 namespace shooterGame
 {
-    public class Inventory : ScriptableObject
+    public abstract class Inventory : ScriptableObject
     {
         [SerializeField] protected int WeaponItemSlots;
 
         [SerializeField] protected List<WeaponItem> weapons;
-        protected Currency coins;
-        protected Currency money;
+        protected CoinItem coins;
+        protected MoneyItem money;
 
-        public virtual void AddWeaponToInventory(WeaponItem weapon)
-        {
+        public abstract void AddWeaponToInventory(WeaponItem weapon);
+        public abstract void AddCoinToInventory(int amount);
+        public abstract void AddMoneyToInventory(int amount);
 
-        }
     }
 }

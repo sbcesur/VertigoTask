@@ -12,6 +12,7 @@ namespace shooterGame.wheelGame
         public bool randomPrizeSelection = false;
 
         public WheelGameData wheelGameData;
+        public PlayerInventory playerInventory;
         private Stack<Prize> _earnedPrizes = new Stack<Prize>();
         [Space]
         [Header("Scripts")]
@@ -47,6 +48,11 @@ namespace shooterGame.wheelGame
 
             print("earned prize is " + _earnedPrizes.Peek().name);
             return chosenPrizeIndex;
+        }
+
+        public void AddPrizesToInventory()
+        {
+
         }
     }
 }

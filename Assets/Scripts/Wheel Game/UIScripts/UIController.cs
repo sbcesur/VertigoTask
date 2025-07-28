@@ -19,6 +19,7 @@ namespace shooterGame.wheelGame
         [SerializeField] private GameObject succesUI;
         [SerializeField] private GameObject failUI;
         [SerializeField] private GameObject resultCard;
+        [SerializeField] private GameObject resultCardParent;
 
         private void Start()
         {
@@ -38,12 +39,14 @@ namespace shooterGame.wheelGame
 
         private void ShowSuccesUI()
         {
+            resultCardParent.SetActive(true);
             resultCard.GetComponent<UnityEngine.UI.Image>().sprite = gameController.prizeController.earnedPrizes.Peek().icon;
             succesUI.SetActive(true);
         }
 
         private void showFailUI()
         {
+            resultCardParent.SetActive(true);
             resultCard.GetComponent<UnityEngine.UI.Image>().sprite = gameController.prizeController.earnedPrizes.Peek().icon;
             failUI.SetActive(true);
         }
@@ -59,27 +62,33 @@ namespace shooterGame.wheelGame
             print("moving to next zone");
             gameController.LoadNextZone();
 
-            succesUI.SetActive(false);
-            failUI.SetActive(false);
+            DisableUIElements();
         }
 
         private void OnQuitClicked()
         {
             gameController.ExitWheelGame();
-            succesUI.SetActive(false);
-            failUI.SetActive(false);
+            DisableUIElements();
         }
 
         private void OnQuitClickedOnFail()
         {
             gameController.DropPrizes();
-
         }
 
         private void onSpinClicked()
         {
             spinWheelButton.gameObject.SetActive(false);
             gameController.SpinWheel();
+        }
+
+
+        //helper functions
+        private void DisableUIElements()
+        {
+            succesUI.SetActive(false);
+            failUI.SetActive(false);
+            resultCardParent.SetActive(false);
         }
     }
 }

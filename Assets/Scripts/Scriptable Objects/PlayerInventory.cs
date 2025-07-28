@@ -15,9 +15,19 @@ namespace shooterGame
             weapons.Add(weapon);
         }
 
-        public void AddCoinToInventory(int addedAmount)
+        public override void AddCoinToInventory(int addedAmount)
         {
             coins.amount += addedAmount;
+        }
+
+        public override void AddMoneyToInventory(int addedAmount)
+        {
+            money.amount += addedAmount;
+        }
+
+        public void UpgradeWeapon()
+        {
+
         }
 
         public void ShowInventory()

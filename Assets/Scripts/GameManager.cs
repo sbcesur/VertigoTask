@@ -33,9 +33,15 @@ namespace shooterGame
         {
             if (!wheelGameActive && Input.GetMouseButtonDown(0))
             {
-                wheelGameActive = true;
-                wheelGameController.StartWheelGame(wheelGameController.wheelGameData.currentZone);
+                StartWheelGame();
             }
+        }
+
+        private void StartWheelGame()
+        {
+            wheelGameActive = true;
+            wheelGameController.StartWheelGame(wheelGameController.wheelGameData.currentZone);
+            UIManager.Instance.DisableTapToStartText();
         }
     }
 }

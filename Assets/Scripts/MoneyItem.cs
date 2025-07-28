@@ -1,18 +1,18 @@
 using shooterGame;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+
 
 namespace shooterGame
 {
-    public class CoinItem : Item
+    public class MoneyItem : Item
     {
         public int amount;
 
         public override void AddToInventory(Inventory inventory)
         {
-            inventory.AddCoinToInventory(amount);
+            inventory.AddMoneyToInventory(amount);
         }
     }
 }
